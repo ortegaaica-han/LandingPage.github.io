@@ -126,6 +126,28 @@
             margin: 40px 0;
         }
 
+        .profile-column {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0 40px 0; 
+        }
+
+        .profile-img {
+            width: 100%;           
+            max-width: 700px;      
+            height: 350px;         
+            object-fit: cover;     
+            border-radius: 15px;   
+            box-shadow: 0 0 20px rgba(129, 195, 215, 0.2); 
+            transition: transform 0.3s ease;
+            cursor: zoom-in;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02); /* Slight zoom when hovering */
+            box-shadow: 0 0 30px rgba(129, 195, 215, 0.4);
+        }
+
     </style>
 </head>
 <body id="top">
@@ -144,6 +166,15 @@
             <a href="#maze">Design Maze</a>
             <a href="#takeaway">Final Takeaway</a>
         </nav>
+
+        <div class="profile-column">
+            <div class="profile-column">
+                <a href="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*ImTT0nd7BZUPe3S8XS_juA.png" target="_blank">
+                <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*ImTT0nd7BZUPe3S8XS_juA.png" 
+                     class="profile-img" alt="C++ Logic vs Design" title="Click to view full image">
+                </a>
+            </div>
+        </div>
 
         <section id="intro">
             <p>

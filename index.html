@@ -4,67 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aica Ortega | Home</title>
-    <style>
-        :root {
-            --page-bg: #16425b;
-            --card-bg: #3a7ca5;
-            --text-main: #ffffff;
-            --accent: #81c3d7;
-        }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--page-bg);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .landing-card {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-width: 600px;
-            text-align: center;
-        }
-
-        h1 { 
-            color: var(--accent); 
-            text-transform: uppercase;
-            letter-spacing: 2px; 
-        }
-        
-        .nav-links {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .nav-links a {
-            background: var(--page-bg);
-            color: var(--accent);
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 10px;
-            transition: 0.3s;
-            font-weight: bold;
-            border: 1px solid transparent;
-        }
-
-        .nav-links a:hover {
-            background: var(--accent);
-            color: var(--page-bg);
-        }
-
-        .full-width { grid-column: span 2; }
-    </style>
+    <link rel="stylesheet" href="design.css">
 </head>
 <body>
+
+    <img src="https://raw.githubusercontent.com/ortegaaica-han/imageAddresses.github.io/refs/heads/main/mainpage2.jpeg" 
+         class="side-image left-img" alt="Decorative Left">
+
+    <img src="https://raw.githubusercontent.com/ortegaaica-han/imageAddresses.github.io/refs/heads/main/mainpage1.jpeg" 
+         class="side-image right-img" alt="Decorative Right">
 
 <div class="landing-card">
     <h1>Aica Ortega</h1>
@@ -78,6 +26,38 @@
         <a href="part2.html">Blog 2: Healthy Gambling</a>
         <a href="part3.html">Blog 3: Work-in-Progress</a>
     </div>
+
+        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.2); margin: 40px 0;">
+
+        <div id="interests" class="skills-section">
+            <h2 style="color: var(--accent); text-transform: uppercase; letter-spacing: 1px;">Talents & Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 style="color: #ffffff;">Technical</h3>
+                    <ul style="list-style: none; padding: 0; color: var(--accent);">
+                        <li>C++ Programming</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>Object-Oriented Logic</li>
+                        <li>Responsive Web Design</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 style="color: #ffffff;">Creative</h3>
+                    <ul style="list-style: none; padding: 0; color: var(--accent);">
+                        <li>Digital Storytelling</li>
+                        <li>Game Mechanics Design</li>
+                        <li>Resource Management (RNG/Gacha)</li>
+                        <li>Creative Writing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="soft-skills" style="margin-top: 20px; font-style: italic; color: #d1e3ee;">
+                <p>"Turning complex logic into visual experiences, one line of code at a time."</p>
+            </div>
+        </div>
 
     <div class="contact-section" id="contact">
         <h3 style="color: #ffffff; margin-bottom: 15px;">Get In Touch</h3>

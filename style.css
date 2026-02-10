@@ -159,3 +159,41 @@ article {
     text-decoration: underline; 
     transform: translateY(-3px); 
 }
+
+/* Container for side-by-side fitted images */
+.image-grid {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* Make both links take up equal space */
+.image-grid a {
+    flex: 1;
+}
+
+.fitted-img {
+    width: 100%;
+    height: 300px; /* Adjust height to your liking */
+    object-fit: cover; /* This makes it "fitted" like your profile img */
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.fitted-img:hover {
+    cursor: zoom-in;
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* Responsive fix: stack them if the screen is too small */
+@media (max-width: 768px) {
+    .image-grid {
+        flex-direction: column;
+    }
+    .fitted-img {
+        height: 250px;
+    }
+}
