@@ -120,7 +120,7 @@ body {
     right: 0;               
     transform: translateY(-50%) scale(1.02);
     cursor: pointer;
-        }
+}
 
 .landing-card {
     position: relative;
