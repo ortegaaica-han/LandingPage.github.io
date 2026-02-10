@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aica Ortega | Home</title>
+    <style>
+        :root {
+            --page-bg: #16425b;
+            --card-bg: #3a7ca5;
+            --text-main: #ffffff;
+            --accent: #81c3d7;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .landing-card {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+        .nav-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .nav-links a {
+            background: var(--page-bg);
+            color: var(--accent);
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+            font-weight: bold;
+            border: 1px solid transparent;
+        }
+        .nav-links a:hover {
+            background: var(--accent);
+            color: var(--page-bg);
+        }
+        .full-width { grid-column: span 2; }
+    </style>
+</head>
+<body>
+
+<div class="landing-card">
+    <h1>Aica Ortega</h1>
+    <p>Welcome to my digital space. I am a student developer navigating the worlds of C++ logic and web design. Passionate about gaming and storytelling, I aim to bridge the gap between technical complexity and creative expression.</p>
+    
+    <div class="nav-links">
+        <a href="about.html">About Me (Bio)</a>
+        <a href="#resume">Resume</a> <a href="#interests">Talents & Skills</a> <a href="part1.html">Blog: C++ vs HTML</a>
+        <a href="part2.html">Blog: Healthy Gambling</a>
+        <a href="part3.html" class="full-width">Blog: Work-in-Progress</a>
+    </div>
+</div>
+
+</body>
+</html>

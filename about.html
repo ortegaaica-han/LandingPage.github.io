@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Aica | Biography</title>
+    <style>
+        :root {
+            --page-bg: #16425b;
+            --article-bg: #3a7ca5;
+            --accent: #81c3d7;
+            --text-main: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; }
+        header, nav { text-align: center; margin-bottom: 20px; }
+        
+        /* Internal Nav Styling */
+        nav.internal-links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .back-home { display: block; margin-bottom: 20px; color: var(--accent); text-decoration: none; font-weight: bold; }
+
+        article { background: var(--article-bg); padding: 40px; border-radius: 15px; }
+        .section-img { width: 100%; border-radius: 10px; margin: 20px 0; }
+        .go-top { display: inline-block; margin-top: 10px; color: #d1e3ee; font-size: 0.9rem; text-decoration: none; font-style: italic; }
+        .go-top:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="top">
+    <a href="index.html" class="back-home">← Back to Landing Page</a>
+    
+    <header>
+        <h1>Two Worlds, Three Acts, Twenty Years</h1>
+        <nav class="internal-links">
+            <a href="#childhood">Childhood</a>
+            <a href="#teenage">Teenage Years</a>
+            <a href="#college">College Years</a>
+        </nav>
+    </header>
+
+    <article>
+        <div id="childhood">
+            <h2>Childhood Years</h2>
+            <p>I was born in Pasig City, Philippines... (Your childhood content)...</p>
+            
+            <br><a href="#top" class="go-top">↑ GO to TOP</a>
+        </div>
+
+        <hr>
+
+        <div id="teenage">
+            <h2>Teenage Years</h2>
+            <p>My teenage years were certainly not pleasant... (Your teenage content)...</p>
+            
+            <br><a href="#top" class="go-top">↑ GO to TOP</a>
+        </div>
+
+        <hr>
+
+        <div id="college">
+            <h2>College Years</h2>
+            <p>Upon entering college, I took a course that I quickly realized was male-dominated... (Your college content)...</p>
+            
+            <br><a href="#top" class="go-top">↑ GO to TOP</a>
+        </div>
+    </article>
+</div>
+
+</body>
+</html>
