@@ -32,16 +32,12 @@ h1 {
 }
 
 .biography-layout {
-    display: flex;
-    gap: 40px;     
-    align-items: flex-start;
-    margin-top: 30px;
+    display: block;
+    overflow: auto;
 }
 
 .profile-column {
-    flex: 0 0 300px;
-    position: sticky; 
-    top: 20px;
+    flex: 0 0 300px;     
     text-align: center;
 }
 
@@ -62,7 +58,6 @@ h1 {
 }
 
 .content-column {
-    flex: 1; 
     overflow: hidden;
 }
 
@@ -191,16 +186,11 @@ article {
     opacity: 0.9;
 }
 
-@media (max-width: 900px) {
-    .biography-layout {
+@media (max-width: 768px) {
+    .image-grid {
         flex-direction: column;
-        align-items: center;
     }
-    
-    .profile-column {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 400px;
-        position: static;
+    .fitted-img {
+        height: 250px;
     }
 }
