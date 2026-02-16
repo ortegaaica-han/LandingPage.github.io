@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Hub | Aica Ortega</title>
+    <style>
+        :root {
+            --page-bg: #16425b;
+            --card-bg: #3a7ca5;
+            --accent: #81c3d7;
+            --text: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        header { text-align: center; margin-bottom: 40px; }
+        .back-home { color: var(--accent); text-decoration: none; font-weight: bold; }
+
+        .media-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+
+        .media-nav a {
+            background: var(--card-bg);
+            padding: 15px 25px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .media-nav a:hover { border-color: var(--accent); background: var(--page-bg); }
+
+        /* Media Grids */
+        .section-title {
+            border-left: 6px solid var(--accent);
+            padding-left: 15px;
+            margin: 60px 0 30px;
+            text-transform: uppercase;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .media-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .media-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.1); }
+
+        .media-card img, .media-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            object-fit: cover;
+        }
+
+        .card-content { padding: 20px; }
+        .card-content h3 { margin: 0 0 10px; color: var(--accent); }
+        .card-content p { font-size: 0.9rem; margin: 5px 0; opacity: 0.8; }
+        .tag {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--page-bg);
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .go-top { display: block; text-align: right; margin-top: 20px; color: var(--accent); text-decoration: none; font-style: italic; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="top">
+    <a href="index.html" class="back-home">← Back to Landing Page</a>
+    
+    <header>
+        <h1>My Digital Library</h1>
+        <nav class="media-nav">
+            <a href="#beats">My Beats</a>
+            <a href="#movies">Film Movies</a>
+            <a href="#tv">TV Shows</a>
+        </nav>
+    </header>
+
+    <section id="beats">
+        <h2 class="section-title">My Beats (Favorite Tunes)</h2>
+        <div class="media-grid">
+            <div class="media-card">
+                <img src="https://via.placeholder.com/300x200/3a7ca5/ffffff?text=Album+Art" alt="Album Art">
+                <div class="card-content">
+                    <span class="tag">Genre: Lo-Fi / Chill</span>
+                    <h3>Song Title</h3>
+                    <p><strong>Artist:</strong> Artist Name</p>
+                    <p><strong>Album:</strong> Album Name (2024)</p>
+                </div>
+            </div>
+        </div>
+        <a href="#top" class="go-top">↑ Back to Top</a>
+    </section>
+
+    <section id="movies">
+        <h2 class="section-title">Film Movies</h2>
+        <div class="media-grid">
+            <div class="media-card">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Trailer"></iframe>
+                <div class="card-content">
+                    <span class="tag">Comedy</span>
+                    <h3>Movie Name</h3>
+                    <p><strong>Director:</strong> Director Name</p>
+                    <p><strong>Starring:</strong> Lead Actor, Lead Actress</p>
+                    <p><em>Short synopsis: A brief but exciting description of the movie plot goes here...</em></p>
+                </div>
+            </div>
+        </div>
+        <a href="#top" class="go-top">↑ Back to Top</a>
+    </section>
+
+    <section id="tv">
+        <h2 class="section-title">TV Shows</h2>
+        <div class="media-grid">
+            <div class="media-card">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="TV Clip"></iframe>
+                <div class="card-content">
+                    <span class="tag">K-Drama</span>
+                    <h3>Series Title</h3>
+                    <p><strong>Director:</strong> Director Name</p>
+                    <p><strong>Starring:</strong> Main Cast</p>
+                    <p><em>Synopsis: This TV series is about a journey through a world of drama and action...</em></p>
+                </div>
+            </div>
+        </div>
+        <a href="#top" class="go-top">↑ Back to Top</a>
+    </section>
+
+</div>
+
+</body>
+</html>

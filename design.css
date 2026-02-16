@@ -205,34 +205,44 @@ body {
 .top-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 15px; 
+    gap: 12px;
+    margin-bottom: 15px;
 }
 
 
-.gallery-row {
-    width: 100%;
+.main-nav-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 12px;
     margin-bottom: 25px;
 }
 
-.full-width-btn {
-    display: block; 
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
+.hub-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
     background: var(--page-bg);
     color: var(--accent);
     text-decoration: none;
     border-radius: 12px;
     font-weight: bold;
-    font-size: 1.2rem; 
-    transition: 0.3s;
+    font-size: 1.1rem;
+    border: 1px solid rgba(129, 195, 215, 0.2);
+    transition: 0.3s ease;
 }
 
-.full-width-btn:hover {
+.hub-btn:hover {
     background: var(--accent);
     color: var(--page-bg);
-    transform: scale(1.01);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 600px) {
+    .top-row, .main-nav-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 .top-row a {
