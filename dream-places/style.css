@@ -1,0 +1,66 @@
+/* General Layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #2c3e50;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #3498db;
+}
+
+/* Container for all content */
+.map-wrapper, .container {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* SVG Map Hover Effects */
+.target-area {
+    fill: rgba(0, 0, 0, 0);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.target-area:hover {
+    fill: rgba(52, 152, 219, 0.2);
+    stroke: #3498db;
+    stroke-width: 3;
+}
+
+/* Image styling for tab pages */
+.gallery-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
