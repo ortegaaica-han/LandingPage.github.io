@@ -261,3 +261,19 @@ body {
     background: var(--accent);
     color: var(--page-bg);
 }
+
+.hub-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+    /* Use your existing color variables */
+}
+
+.hub-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.2);
+}
