@@ -3,223 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tug-of-War | Aica Ortega</title>
+    <title>Tug-of-War | AO. Blog</title>
+    <link rel="stylesheet" href="design.css">
     <style>
-        :root {
-            --page-bg: #16425b;
-            --article-bg: #3a7ca5;
-            --title-color: #81c3d7;
-            --text-main: #ffffff;
-            --text-muted: #d1e3ee;
-            --accent-glow: #81c3d7;
-            --cpp-highlight: #ff79c6;
+        /* Specific styling for the Article content */
+        .blog-container {
+            padding-top: 140px; /* Space for the fixed nav */
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        html { 
-            scroll-behavior: smooth; 
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--page-bg);
-            color: var(--text-main);
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container { 
-            max-width: 850px; 
-            margin: 50px auto; 
-            padding: 20px; 
-        }
-
-        header { 
-            text-align: center; 
-            margin-bottom: 40px; 
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            color: #d9dcd6;
-            margin-bottom: 10px;
+        .series-info {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--accent);
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 20px;
         }
 
-        .author-meta {
-            display: block; 
-            text-align: center; 
-            font-style: italic;
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-top: -5px;
+        .article-body {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        article { 
-            background-color: var(--article-bg); 
-            padding: 40px; border-radius: 15px;
-            border-radius: 15px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
-        }
-        
-        .story-nav { 
-            background: rgba(0,0,0,0.2); 
-            padding: 15px; border-radius: 10px; 
-            text-align: center; 
-            margin-bottom: 30px; 
-        }
-        
-        .story-nav a { 
-            color: var(--accent-glow); 
-            text-decoration: none; 
-            margin: 0 10px; 
-            font-weight: bold; 
-        }
-        
-        h2 { 
-            color: #d9dcd6; 
-            border-bottom: 2px solid rgba(129, 195, 215, 0.3); 
-            padding-bottom: 10px; 
-            margin-top: 35px; 
-            font-size: 1.6rem;
+        .article-body h2 {
+            margin-top: 40px;
+            color: var(--accent);
         }
 
-        p {
-            margin-bottom: 25px;
-            font-size: 1.15rem;
-            color: #f0f7fa;
-            text-align: justify; 
-        }
-
-        .highlight {
-            color: var(--accent-glow);
-            font-weight: bold;
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
-        }
-
-        .tech-tag {
-            color: var(--title-color);
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-        }
-        
-        .go-top { 
-            display: inline-block; 
-            margin-top: 10px; color: var(--text-muted); 
-            text-decoration: none; font-size: 0.9rem; 
-            font-style: italic; 
-        }
-        
-        blockquote { 
-            background: rgba(22, 66, 91, 0.4); 
-            border-left: 5px solid var(--title-color); 
-            margin: 30px 0; padding: 20px; 
-            font-style: italic; 
-            border-radius: 0 10px 10px 0; 
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background: rgba(255,255,255,0.1);
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 20px 30px;
             margin: 40px 0;
+            background: var(--card-bg);
+            font-style: italic;
+            border-radius: 0 12px 12px 0;
         }
 
-        .profile-column {
-        width: 100%;
-        text-align: center;
-        margin: 20px 0 40px 0; 
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover { color: var(--accent); }
 
         .profile-img {
-            width: 100%;           
-            max-width: 700px;      
-            height: 350px;         
-            object-fit: cover;     
-            border-radius: 15px;   
-            box-shadow: 0 0 20px rgba(129, 195, 215, 0.2); 
-            transition: transform 0.3s ease;
-            cursor: zoom-in;
+            width: 100%;
+            border-radius: 16px;
+            margin: 30px 0;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-
-        .profile-img:hover {
-            transform: scale(1.02); /* Slight zoom when hovering */
-            box-shadow: 0 0 30px rgba(129, 195, 215, 0.4);
-        }
-
     </style>
 </head>
-<body id="top">
+<body>
 
-<div class="container">
-    <header>
-        <h1>Tug-of-War with C++ and HTML/CSS</h1>
-        <p class="author-meta">By: Aica Ortega</p>
-    </header>
-
-    <article>
-        <nav class="story-nav">
-            <a href="index.html">🏠 Home</a>
-            <span style="color: var(--text-muted);">|</span>
-            <a href="#logic">C++ Logic</a>
-            <a href="#maze">Design Maze</a>
-            <a href="#takeaway">Final Takeaway</a>
-        </nav>
-
-        <div class="profile-column">
-            <div class="profile-column">
-                <a href="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*ImTT0nd7BZUPe3S8XS_juA.png" target="_blank">
-                <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*ImTT0nd7BZUPe3S8XS_juA.png" 
-                     class="profile-img" alt="C++ Logic vs Design" title="Click to view full image">
-                </a>
-            </div>
+    <nav class="top-nav">
+        <div class="nav-logo">AO<span>.</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dream-places/index.html">Travel Map</a>
+            <a href="index.html#contact" class="special-link">Contact</a>
         </div>
+    </nav>
 
-        <section id="intro">
-            <p>
-                Nakaranas na ba kayo na parang sasabog na ang utak niyo dahil sa dami ng keywords at syntax na kailangang tandaan? 
-                Switching from object-oriented logic to visual design feels like a constant reality check that I wasn’t fully prepared for. 
-                It’s amazing yet honestly <strong>"too much"</strong> minsan when the rules of two different worlds start to overlap in my head. 
-                Here is how I’m navigating the fragile balance between <span class="highlight">C++</span> and <span class="highlight">HTML/CSS</span>.
-            </p>
-        </section>
+    <div class="blog-container container">
+        <span class="series-info">Blog Series: Part 1 of 3</span>
+        
+        <header>
+            <h1 style="font-size: 3rem; margin-bottom: 10px; background: linear-gradient(to right, #fff, var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                Tug-of-War: C++ vs HTML
+            </h1>
+            <p style="opacity: 0.6; font-style: italic;">By Aica Ortega • February 2026</p>
+        </header>
 
-        <section id="logic">
-            <h2>The Logic of C++</h2>
-            <p>
-                C++ is a language I’ve learned from a young age, so it’s something I find easier to understand compared to others. 
-                However, "easy" doesn't mean it isn't sensitive; sanay na akong harapin ang mga "danas" o errors na lumalabas kapag may mali sa built-in codes ko. 
-                Even with my experience, one small mistake in the logic can break the entire program, proving that it requires a lot of mental discipline to get right.
-            </p>
-            <a href="#top" class="go-top">↑ Back to Top</a>
-        </section>
+        <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*ImTT0nd7BZUPe3S8XS_juA.png" 
+             class="profile-img" alt="C++ vs HTML Design">
 
-        <section id="maze">
-            <h2>The Maze of Design</h2>
-            <p>
-                As someone who isn't naturally a creative person, jumping into <span class="tech-tag">HTML/CSS</span> felt like navigating a maze. 
-                When I once created a personal website project, I realized that web design is a lot more sensitive than C++ because of the "manual conversion" needed just to put elements in the right place. 
-                One misplaced tag or a tiny error in the CSS can ruin the whole layout, making the "basic intro" of web design feel like a heavy weight to carry.
-            </p>
-            <blockquote>"Lahat naman tayo nagsisimula sa umpisa... the 'halo-halo' logic of C++ prepared me to handle the strict structure of HTML/CSS."</blockquote>
-            <p>
-                Just like other programming languages, things look minimal and simple on the outside, but people don't see the struggles and long codes hidden behind the interface. 
-            </p>
-            <a href="#top" class="go-top">↑ Back to Top</a>
-        </section>
+        <article class="article-body">
+            <section id="intro">
+                <p>
+                    Nakaranas na ba kayo na parang sasabog na ang utak niyo dahil sa dami ng keywords at syntax na kailangang tandaan? 
+                    Switching from object-oriented logic to visual design feels like a constant reality check. 
+                    It’s amazing yet honestly <strong>"too much"</strong> minsan when the rules of two different worlds start to overlap.
+                </p>
+            </section>
 
-        <section id="takeaway">
-            <h2>The Final Takeaway</h2>
-            <p>
-                At the end of the day, these challenges are worth it because I dream of making my own game in the future. 
-                The "sensitivity" of these languages isn't a barrier, but a tool that makes me a more careful and detailed developer. 
-                My plan is to keep learning both, because the more I know, the better I'll be at turning my ideas into reality.
-            </p>
-            <a href="#top" class="go-top">↑ Back to Top</a>
-        </section>
-    </article>
-</div>
+            <section id="logic">
+                <h2>The Logic of C++</h2>
+                <p>
+                    C++ is a language I’ve learned from a young age, so it’s something I find easier to understand compared to others. 
+                    However, "easy" doesn't mean it isn't sensitive; sanay na akong harapin ang mga "danas" o errors na lumalabas kapag may mali sa built-in codes ko. 
+                    Even with my experience, one small mistake in the logic can break the entire program, proving that it requires a lot of mental discipline to get right.
+                </p>
+            </section>
+
+            <section id="maze">
+                <p>
+                    As someone who isn't naturally a creative person, jumping into <span class="tech-tag">HTML/CSS</span> felt like navigating a maze. 
+                    When I once created a personal website project, I realized that web design is a lot more sensitive than C++ because of the "manual conversion" needed just to put elements in the right place. 
+                    One misplaced tag or a tiny error in the CSS can ruin the whole layout, making the "basic intro" of web design feel like a heavy weight to carry.
+                </p>
+                <blockquote>"Lahat naman tayo nagsisimula sa umpisa... the 'halo-halo' logic of C++ prepared me to handle the strict structure of HTML/CSS."</blockquote>
+                <p>
+                    Just like other programming languages, things look minimal and simple on the outside, but people don't see the struggles and long codes hidden behind the interface. 
+                </p>
+            </section>
+
+            <section id="takeaway">
+                <p>
+                    At the end of the day, these challenges are worth it because I dream of making my own game in the future. 
+                    The "sensitivity" of these languages isn't a barrier, but a tool that makes me a more careful and detailed developer. 
+                    My plan is to keep learning both, because the more I know, the better I'll be at turning my ideas into reality.
+                </p>
+            </section>
+        </article>
+
+        <nav class="post-navigation">
+            <a href="index.html" class="nav-btn">← Back to Hub</a>
+            <div>
+                <span style="opacity: 0.4; margin-right: 10px;">Next Post:</span>
+                <a href="part2.html" class="nav-btn" style="color: var(--accent);">Healthy Gambling →</a>
+            </div>
+        </nav>
+    </div>
+
+    <a href="#top" class="back-to-top" id="backToTop">
+        <span>↑</span>
+        <small>TOP</small>
+    </a>
+
+    <footer style="margin-top: 100px; padding: 60px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p class="copyright" style="opacity: 0.3; font-size: 0.8rem;">&copy; 2026 Aica Ortega. Part 1 of the Developer Series.</p>
+    </footer>
+
+    <script>
+        const backToTop = document.getElementById("backToTop");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTop.style.opacity = "1";
+                backToTop.style.visibility = "visible";
+            } else {
+                backToTop.style.opacity = "0";
+                backToTop.style.visibility = "hidden";
+            }
+        };
+    </script>
 
 </body>
 </html>

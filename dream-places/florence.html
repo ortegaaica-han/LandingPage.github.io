@@ -1,16 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dream Visit: Florence</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence | Dream Places</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific accent for Florence: Terracotta & Renaissance Red */
+        :root {
+            --florence-clay: #e2725b;
+            --florence-glow: rgba(226, 114, 91, 0.2);
+            --marble-white: #f8fafc;
+        }
+
+        .hero-section {
+            height: 60vh;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), var(--bg-dark)),
+                        url('https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/florenceaesthetic.jpg?raw=true');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 50px;
+        }
+
+        .florence-title {
+            border-left: 4px solid var(--florence-clay);
+            padding-left: 20px;
+        }
+
+        .florence-title h1 {
+            background: linear-gradient(to right, #fff, var(--florence-clay));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            font-size: 4rem;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: -30px;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Video Wrapper */
+        .video-container {
+            margin-top: 30px; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            aspect-ratio: 16/9; 
+            background: #000;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .back-link:hover { color: var(--florence-clay); }
+
+        .read-more-btn {
+            margin-top: 20px;
+            background: transparent;
+            border: 1px solid var(--florence-clay);
+            color: var(--florence-clay);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .read-more-btn:hover {
+            background: var(--florence-clay);
+            color: var(--bg-dark);
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout { grid-template-columns: 1fr; }
+            .florence-title h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Why I want to visit Florence, Italy</h1>
-    <p>I've always wanted to see the Renaissance art and walk through the historic streets...</p>
-    
-    <img src="duomo.jpg" alt="The Duomo" width="400">
-    <img src="pasta.jpg" alt="Italian Food" width="400">
 
-    <br>
-    <a href="index.html">Go back to the collage</a>
+    <nav class="global-nav">
+        <div class="logo">AO<span>.</span></div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Map Home</a>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="florence-title">
+                <span class="sub-title" style="color: var(--florence-clay)">The Cradle of the Renaissance</span>
+                <h1>Florence</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="grid-layout">
+            <div class="content-card">
+                <a href="index.html" class="back-link">← Back to Map</a>
+                <h2>An Artistic Sanctuary</h2>
+                <p>Walking through Florence is like stepping into a living museum. From the massive terracotta dome of the Duomo to the legendary art in the Uffizi Gallery, this city is the ultimate destination for anyone who appreciates the history of design, perspective, and sculpture.</p>
+                
+                <p>I dream of crossing the Ponte Vecchio at sunset and seeing the works of Michelangelo and Da Vinci in the very place they were created. It’s a city that prioritizes beauty in every corner.</p>
+                
+                <div class="video-container">
+                    <iframe width="100%" height="100%" 
+                        src="https://www.youtube.com/embed/DfW-Tn231Sk?si=MtwTSMiBnYlJlPii&amp;start=1" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div id="extra-facts" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--glass-border);">
+                    <h3 style="color: var(--florence-clay);">Hidden Gems</h3>
+                    <ul style="color: var(--text-dim); padding-left: 20px;">
+                        <li><strong>The Duomo:</strong> The red-tiled dome remains the largest brick dome ever constructed.</li>
+                        <li><strong>Art Wealth:</strong> It's estimated that roughly 30% of the world's most important artistic treasures are found in Florence.</li>
+                        <li><strong>Ponte Vecchio:</strong> This was the only bridge in Florence that the fleeing German army did not destroy during WWII.</li>
+                    </ul>
+                </div>
+                <button onclick="toggleFacts()" id="toggle-btn" class="read-more-btn">Read More Facts</button>
+            </div>
+
+            <div class="sidebar">
+                <div class="content-card">
+                    <h3>Top Sights</h3>
+                    <ul style="list-style: none; padding: 0; color: var(--text-dim);">
+                        <li style="margin-bottom: 15px;">⛪ <strong>Santa Maria del Fiore</strong><br><small>The iconic heart of the city.</small></li>
+                        <li style="margin-bottom: 15px;">🎨 <strong>The Uffizi Gallery</strong><br><small>Home to the 'Birth of Venus'.</small></li>
+                        <li style="margin-bottom: 15px;">🌉 <strong>Ponte Vecchio</strong><br><small>Medieval stone closed-spandrel arch bridge.</small></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFacts() {
+            var facts = document.getElementById("extra-facts");
+            var btnText = document.getElementById("toggle-btn");
+            if (facts.style.display === "none") {
+                facts.style.display = "block";
+                btnText.innerHTML = "Show Less";
+            } else {
+                facts.style.display = "none";
+                btnText.innerHTML = "Read More Facts";
+            }
+        }
+    </script>
 </body>
 </html>

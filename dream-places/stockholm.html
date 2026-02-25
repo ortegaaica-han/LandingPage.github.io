@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stockholm | Dream Places</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific accent for Stockholm: Ice Blue & Nordic Slate */
+        :root {
+            --stockholm-ice: #0ea5e9; /* Bright Cyan */
+            --stockholm-glow: rgba(14, 165, 233, 0.2);
+            --nordic-white: #f8fafc;
+        }
+
+        .hero-section {
+            height: 60vh;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), var(--bg-dark)),
+                        url('https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 50px;
+        }
+
+        .stockholm-title {
+            border-left: 4px solid var(--stockholm-ice);
+            padding-left: 20px;
+        }
+
+        .stockholm-title h1 {
+            background: linear-gradient(to right, #fff, var(--stockholm-ice));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            font-size: 4rem;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: -30px;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .video-container {
+            margin-top: 30px; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            aspect-ratio: 16/9; 
+            background: #000;
+            border: 1px solid var(--glass-border);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .back-link:hover { color: var(--stockholm-ice); }
+
+        .read-more-btn {
+            margin-top: 20px;
+            background: transparent;
+            border: 1px solid var(--stockholm-ice);
+            color: var(--stockholm-ice);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .read-more-btn:hover {
+            background: var(--stockholm-ice);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--stockholm-glow);
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout { grid-template-columns: 1fr; }
+            .stockholm-title h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="global-nav">
+        <div class="logo">AO<span>.</span></div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Map Home</a>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="stockholm-title">
+                <span class="sub-title" style="color: var(--stockholm-ice)">The Venice of the North</span>
+                <h1>Stockholm</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="grid-layout">
+            <div class="content-card">
+                <a href="index.html" class="back-link">← Back to Map</a>
+                <h2>A City on the Water</h2>
+                <p>Built on 14 islands and connected by 57 bridges, Stockholm is a masterclass in urban planning and sustainability. I'm drawn to its unique mix of medieval history in Gamla Stan and the cutting-edge, minimalist design that permeates the modern city.</p>
+                
+                <p>It’s a place where nature is never more than a few steps away, even in the heart of the city, making it a dream destination for someone who values clean, intentional design.</p>
+                
+                <div class="video-container">
+                    <iframe width="100%" height="100%" 
+                        src="https://www.youtube.com/embed/gc4Tbfz9Bx0?si=fmyn6-pi3eFpamxJ" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div id="extra-facts" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--glass-border);">
+                    <h3 style="color: var(--stockholm-ice);">Nordic Nuances</h3>
+                    <ul style="color: var(--text-dim); padding-left: 20px;">
+                        <li><strong>Nobel Prize:</strong> Stockholm is the home of the Nobel Prizes, which have been awarded here since 1901.</li>
+                        <li><strong>The Underground:</strong> Stockholm's subway system is often called "the world's longest art gallery."</li>
+                        <li><strong>The Vasa:</strong> The city houses the Vasa Museum, featuring a 17th-century ship that is almost 100% original.</li>
+                    </ul>
+                </div>
+                <button onclick="toggleFacts()" id="toggle-btn" class="read-more-btn">Read More Facts</button>
+            </div>
+
+            <div class="sidebar">
+                <div class="content-card">
+                    <h3>Island Hopping</h3>
+                    <ul style="list-style: none; padding: 0; color: var(--text-dim);">
+                        <li style="margin-bottom: 15px;">🏘️ <strong>Gamla Stan</strong><br><small>The colorful Old Town.</small></li>
+                        <li style="margin-bottom: 15px;">🚢 <strong>Vasa Museum</strong><br><small>A marvel of maritime history.</small></li>
+                        <li style="margin-bottom: 15px;">🌲 <strong>Djurgården</strong><br><small>The city's green oasis.</small></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFacts() {
+            var facts = document.getElementById("extra-facts");
+            var btnText = document.getElementById("toggle-btn");
+            if (facts.style.display === "none") {
+                facts.style.display = "block";
+                btnText.innerHTML = "Show Less";
+            } else {
+                facts.style.display = "none";
+                btnText.innerHTML = "Read More Facts";
+            }
+        }
+    </script>
+</body>
+</html>

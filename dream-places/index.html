@@ -2,33 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dream Places | Image Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Places | AO. Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="../index.html">Main Site</a>
-        <a href="index.html">Map Home</a>
+    <nav class="global-nav">
+        <div class="logo">AO<span>.</span></div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="index.html" class="active">Map Home</a>
+        </div>
     </nav>
 
-    <div class="map-wrapper">
-        <h1>Dream Places to Visit</h1>
-        <p>Click on the collage to explore my dream destinations.</p>
+    <div class="container">
+        <header class="hero-header">
+            <span class="sub-title">Interactive Exploration</span>
+            <h1>Dream Destinations</h1>
+            <p>Click on the regions within the collage to explore the architecture and culture of my top travel picks.</p>
+        </header>
 
-        <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-            <image href="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/collage.jpg?raw=true" width="1920" height="1080" />
+        <div class="map-wrapper">
+            <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <image href="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/collage.jpg?raw=true" width="1920" height="1080" />
 
-            <a href="florence.html"><circle cx="1595" cy="220" r="133" class="target-area"></circle></a>
-
-            <a href="kyoto.html"><rect x="350" y="144" width="417" height="424" class="target-area"></rect></a>
-
-            <a href="stockholm.html"><polygon points="1447,497 1571,497 1730,554 1786,658 1786,774 1726,858 1584,887 1440,897 1300,844 1238,751 1241,634 1323,537" class="target-area"></polygon></a>
-
-            <a href="dubai.html"><polygon points="687,674 785,672 846,734 844,835 785,902 692,902 623,838 618,736" class="target-area"></polygon></a>
-
-            <a href="basilica.html"><polygon points="968,187 1039,187 1110,231 1154,299 1152,381 1112,455 1055,492 962,494 886,443 855,379 851,286 898,226" class="target-area"></polygon></a>
-        </svg>
+                <a href="florence.html"><circle cx="1595" cy="220" r="133" class="target-area"></circle></a>
+                <a href="kyoto.html"><rect x="350" y="144" width="417" height="424" class="target-area"></rect></a>
+                <a href="stockholm.html"><polygon points="1447,497 1571,497 1730,554 1786,658 1786,774 1726,858 1584,887 1440,897 1300,844 1238,751 1241,634 1323,537" class="target-area"></polygon></a>
+                <a href="dubai.html"><polygon points="687,674 785,672 846,734 844,835 785,902 692,902 623,838 618,736" class="target-area"></polygon></a>
+                <a href="basilica.html"><polygon points="968,187 1039,187 1110,231 1154,299 1152,381 1112,455 1055,492 962,494 886,443 855,379 851,286 898,226" class="target-area"></polygon></a>
+            </svg>
+        </div>
     </div>
 
 </body>

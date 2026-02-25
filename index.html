@@ -3,97 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aica Ortega | Home</title>
+    <title>Aica Ortega | Portfolio</title>
     <link rel="stylesheet" href="design.css">
 </head>
 <body>
 
+    <nav class="top-nav">
+        <div class="nav-logo">AO<span>.</span></div>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="media.html">Media Hub</a>
+            <a href="dream-places/index.html" class="special-link">Dream Destinations</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
     <img src="https://raw.githubusercontent.com/ortegaaica-han/imageAddresses.github.io/refs/heads/main/mainpage2.jpeg" 
-         class="side-image left-img" alt="Decorative Left">
-
+         class="side-image left-img" alt="">
     <img src="https://raw.githubusercontent.com/ortegaaica-han/imageAddresses.github.io/refs/heads/main/mainpage1.jpeg" 
-         class="side-image right-img" alt="Decorative Right">
+         class="side-image right-img" alt="">
 
-<div class="landing-card">
-    <h1>Aica Ortega</h1>
-    <p>Welcome to my digital space. I am a student developer navigating the worlds of C++ logic and web design. Passionate about gaming and storytelling, I aim to bridge the gap between technical complexity and creative expression.</p>
-    
-    <div class="nav-container">
-        <div class="primary-links">
-            <a href="about.html">About Me (Bio)</a>
-            <a href="#resume">Resume</a>
-            <a href="#interests">Talents & Skills</a>
+    <header class="hero">
+        <div class="container">
+            <h1>Aica Ortega</h1>
+            <p class="subtitle">Student Developer & Digital Storyteller</p>
+            <p class="bio">Navigating the worlds of C++ logic and web design. I bridge the gap between technical complexity and creative expression.</p>
+            <div class="hero-cta">
+                <a href="#interests" class="btn-primary">View Skills</a>
+                <a href="part1.html" class="btn-secondary">Read Blog</a>
+            </div>
         </div>
+    </header>
 
-        <div class="main-nav-row">
-            <a href="gallery.html" class="hub-btn">Photo Gallery</a>
-            <a href="media.html" class="hub-btn">Media Hub</a>
-
-            <a href="dream-places/index.html" class="hub-btn" style="background: var(--accent); color: #1a1a2e;">Dream Destinations</a>
-        </div>
-
-        <h3 class="blog-header">Blog Contents</h3>
-
-        <div class="blog-links">
-            <a href="part1.html">C++ vs HTML</a>
-            <a href="part2.html">Healthy Gambling</a>
-            <a href="part3.html">Work-in-Progress</a>
-        </div>
-    </div>
-
-    <div id="interests" class="skills-section">
-        </div>
-
-        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.2); margin: 40px 0;">
-
-        <div id="interests" class="skills-section">
-            <h2 style="color: var(--accent); text-transform: uppercase; letter-spacing: 1px;">Talents & Skills</h2>
-            
+    <main class="container">
+        <section id="interests" class="skills-section">
+            <h2 class="section-title">Talents & Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 style="color: #ffffff;">Technical</h3>
-                    <ul style="list-style: none; padding: 0; color: var(--accent);">
+                <div class="skill-card">
+                    <h3>Technical</h3>
+                    <ul>
                         <li>C++ Programming</li>
                         <li>HTML5 & CSS3</li>
                         <li>Object-Oriented Logic</li>
                         <li>Responsive Web Design</li>
                     </ul>
                 </div>
-                
-                <div class="skill-category">
-                    <h3 style="color: #ffffff;">Creative</h3>
-                    <ul style="list-style: none; padding: 0; color: var(--accent);">
+                <div class="skill-card">
+                    <h3>Creative</h3>
+                    <ul>
                         <li>Digital Storytelling</li>
                         <li>Game Mechanics Design</li>
-                        <li>Resource Management (RNG/Gacha)</li>
+                        <li>Resource Management</li>
                         <li>Creative Writing</li>
                     </ul>
                 </div>
             </div>
+        </section>
 
-            <div class="soft-skills" style="margin-top: 20px; font-style: italic; color: #d1e3ee;">
-                <p>"Turning complex logic into visual experiences, one line of code at a time."</p>
+        <section class="blog-preview">
+            <h2 class="section-title">Blog Contents</h2>
+            <div class="blog-grid">
+                <a href="part1.html" class="blog-item">C++ vs HTML</a>
+                <a href="part2.html" class="blog-item">Healthy Gambling</a>
+                <a href="part3.html" class="blog-item">Work-in-Progress</a>
             </div>
-        </div>
+        </section>
+    </main>
 
-    <div class="contact-section" id="contact">
-        <h3 style="color: #ffffff; margin-bottom: 15px;">Get In Touch</h3>
-    
-        <div class="contact-info">
-            <a href="mailto:ortega.aica@ue.edu.ph" 
-            class="contact-item" 
-            onclick="copyEmail(event, 'ortega.aica@ue.edu.ph')">
-            <span>📧</span> GMAIL
-            </a>
-            <a href="https://www.linkedin.com/in/aica-ortega-1146a0336/" target="_blank" class="contact-item">
-                <span>🔗</span> LinkedIn
-            </a>
-            <a href="https://github.com/ortegaaica-han" target="_blank" class="contact-item">
-                <span>🐙</span> GitHub
-            </a>
+    <footer id="contact">
+        <div class="container">
+            <h3>Get In Touch</h3>
+            <div class="contact-links">
+                <a href="mailto:ortega.aica@ue.edu.ph">Email</a>
+                <a href="https://www.linkedin.com/in/aica-ortega-1146a0336/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/ortegaaica-han" target="_blank">GitHub</a>
+            </div>
+            <p class="copyright">&copy; 2026 Aica Ortega. Built with logic & creativity.</p>
         </div>
-    </div>
-</div>
+    </footer>
 
 </body>
 </html>

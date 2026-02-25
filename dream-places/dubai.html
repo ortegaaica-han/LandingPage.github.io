@@ -2,22 +2,214 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Visit Dubai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai | Dream Places</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --dubai-gold: #fbbf24;
+            --dubai-glow: rgba(251, 191, 36, 0.3);
+        }
+
+        .hero-section {
+            height: 60vh;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.2), var(--bg-dark)),
+                        url('https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/sunsetinDUBAI.jpg?raw=true');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 50px;
+        }
+
+        .dubai-title {
+            border-left: 4px solid var(--dubai-gold);
+            padding-left: 20px;
+        }
+
+        .dubai-title h1 {
+            background: linear-gradient(to right, #fff, var(--dubai-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            font-size: 4rem;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: -30px;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .stat-box span {
+            display: block;
+            color: var(--dubai-gold);
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .stat-box label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .back-link:hover { 
+            color: var(--dubai-gold); 
+        }
+
+        .read-more-btn {
+            margin-top: 20px;
+            background: transparent;
+            border: 1px solid var(--dubai-gold);
+            color: var(--dubai-gold);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .read-more-btn:hover {
+            background: var(--dubai-gold);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--dubai-glow);
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout { grid-template-columns: 1fr; }
+            .dubai-title h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">« Back to Map</a>
+    <nav class="global-nav">
+        <div class="logo">AO<span>.</span></div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Map Home</a>
+        </div>
     </nav>
 
-    <div class="container">
-        <h1>Burj Khalifa, Dubai</h1>
-        <p>I want to visit Dubai to see the incredible engineering of the world's tallest building and experience the modern desert architecture.</p>
-        
-        <img src="dubai1.jpg" class="gallery-img" alt="Burj Khalifa">
-        <img src="dubai2.jpg" class="gallery-img" alt="Dubai at night">
+    <div class="hero-section">
+        <div class="container">
+            <div class="dubai-title">
+                <span class="sub-title" style="color: var(--dubai-gold)">The City of Gold</span>
+                <h1>Dubai</h1>
+            </div>
+        </div>
     </div>
+
+    <div class="container">
+        <div class="grid-layout">
+            <div class="content-card">
+                <a href="index.html" class="back-link">← Back to Map</a>
+                <h2>A Vision of the Future</h2>
+                <p>Dubai is a testament to human ambition. Rising from the Arabian Desert, it has transformed into a global icon of luxury and architectural marvels. 
+                    My dream is to witness the sheer scale of the Burj Khalifa and explore the intersection of traditional Emirati culture and futuristic urban planning.
+                </p>
+                
+                <p>Whether it's the high-end shopping at the Dubai Mall or the serene sunsets over the Palm Jumeirah, this city represents a peak of modern engineering that I find deeply inspiring for design and structure.</p>
+                
+                <div style="margin-top: 30px; border-radius: 15px; overflow: hidden; aspect-ratio: 16/9; background: #000;">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        src="https://www.youtube.com/embed/Tpisdzc47iM?si=mrf-T_CPuJ78ZQfx" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div id="extra-facts" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--glass-border);">
+                    <h3 style="color: var(--dubai-gold);">Did You Know?</h3>
+                    <ul style="color: var(--text-dim); padding-left: 20px;">
+                        <li><strong>Skyline:</strong> Dubai has over 200 completed skyscrapers, the most of any city in the Middle East.</li>
+                        <li>The Dubai police force is famous for its fleet of supercars, including Lamborghinis and Bentleys.</li>
+                        <li><strong>Artificial Islands:</strong> The Palm Jumeirah is so large it can be seen from space.</li>
+                    </ul>
+                </div>
+
+                <button onclick="toggleFacts()" id="toggle-btn" class="read-more-btn">Read More Facts</button>
+            </div>
+
+            <div class="sidebar">
+                <div class="content-card">
+                    <h3>Key Landmarks</h3>
+                    <ul style="list-style: none; padding: 0; color: var(--text-dim);">
+                        <li style="margin-bottom: 15px;">💎 <strong>Burj Khalifa</strong><br><small>Tallest building in the world.</small></li>
+                        <li style="margin-bottom: 15px;">🌊 <strong>The Palm Jumeirah</strong><br><small>Iconic man-made archipelago.</small></li>
+                        <li style="margin-bottom: 15px;">🏛️ <strong>Museum of the Future</strong><br><small>A marvel of parametric design.</small></li>
+                    </ul>
+
+                    <div class="stat-grid" style="margin-top: 30px;">
+                        <div class="stat-box">
+                            <span>42°C</span>
+                            <label>Avg Summer</label>
+                        </div>
+                        <div class="stat-box">
+                            <span>AED</span>
+                            <label>Currency</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function toggleFacts() {
+        var facts = document.getElementById("extra-facts");
+        var btnText = document.getElementById("toggle-btn");
+
+        if (facts.style.display === "none") {
+            facts.style.display = "block";
+            btnText.innerHTML = "Show Less";
+        } else {
+            facts.style.display = "none";
+            btnText.innerHTML = "Read More Facts";
+        }
+    }
+    </script>
 
 </body>
 </html>

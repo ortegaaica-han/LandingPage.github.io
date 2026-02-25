@@ -3,212 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grind, Pull, Repeat | Aica Ortega</title>
+    <title>Grind, Pull, Repeat | AO. Blog</title>
+    <link rel="stylesheet" href="design.css">
     <style>
-        :root {
-            --page-bg: #16425b;
-            --article-bg: #3a7ca5;
-            --title-color: #81c3d7;
-
-            --text-main: #ffffff;
-            --text-muted: #d1e3ee;
-            --accent-glow: #81c3d7;
+        /* Specific styling for the Article content */
+        .blog-container {
+            padding-top: 140px; /* Space for the fixed nav */
+            max-width: 850px;
+            margin: 0 auto;
         }
 
-        html { 
-            scroll-behavior: smooth; 
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--page-bg);
-            color: var(--text-main);
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container { 
-            max-width: 850px; 
-            margin: 50px auto; 
-            padding: 20px; 
-        }
-        
-        header { 
-            text-align: center; 
-            margin-bottom: 40px; 
-        }
-        
-        h1 { 
-            font-size: 3rem; 
-            color: #d9dcd6; 
-            text-transform: uppercase; 
-            margin-bottom: 10px; 
+        .series-info {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--accent);
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 20px;
         }
 
-        .author-meta {
-            font-style: italic;
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-        
-        article { 
-            background-color: var(--article-bg); 
-            padding: 40px; 
-            border-radius: 15px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+        .article-body {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        .story-nav {
-            background: rgba(0,0,0,0.2);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 30px;
+        .article-body h2 {
+            margin-top: 40px;
+            color: var(--accent);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 10px;
         }
 
-        .story-nav a {
-            color: var(--accent-glow);
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-
-        h2 { 
-            color: #d9dcd6; 
-            border-bottom: 2px solid rgba(129, 195, 215, 0.3); 
-            padding-bottom: 10px; 
-            margin-top: 35px; 
-            font-size: 1.6rem;
-        }
-        
-        p { 
-            margin-bottom: 25px; 
-            font-size: 1.15rem; 
-            color: #f0f7fa; 
-        }
-        
-        .highlight { 
-            color: var(--accent-glow); 
-            font-weight: bold;
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); 
-        }
-        
-        .go-top { 
-            display: inline-block; 
-            margin-bottom: 20px; 
-            color: var(--text-muted); 
-            text-decoration: none; 
-            font-size: 0.9rem; 
-            font-style: italic; 
-        }
-        
         blockquote {
-            background: rgba(22, 66, 91, 0.4);
-            border-left: 5px solid var(--title-color);
-            margin: 30px 0;
-            padding: 20px;
-            font-style: italic;
-            font-size: 1.2rem;
-            border-radius: 0 10px 10px 0;
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background: rgba(255,255,255,0.1);
+            border-left: 4px solid var(--accent);
+            padding: 20px 30px;
             margin: 40px 0;
+            background: var(--card-bg);
+            font-style: italic;
+            border-radius: 0 12px 12px 0;
+            font-size: 1.2rem;
         }
 
-        /* Container for the side-by-side images */
-        .image-grid {
-            display: flex;
-            gap: 20px;          /* Space between the two images */
-            margin-bottom: 30px;
-            width: 100%;
-        }
-
-        /* Make each image link take up equal space */
-        .image-grid a {
-            flex: 1;            /* Forces both links to be the same width */
-            text-decoration: none;
-        }
-
-        .blog-img {
-            width: 100%;        /* Fills the half-width container */
-            height: 250px;      /* Set a fixed height for symmetry */
-            object-fit: cover;  /* Prevents stretching/distortion */
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .blog-img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(129, 195, 215, 0.4);
-        }
-
-        /* Mobile Fix: Stack them vertically on small screens */
-        @media (max-width: 600px) {
-            .image-grid {
-                flex-direction: column;
-            }
-            .blog-img {
-                height: 200px;
-            }
-        }
-
+        /* Image Grid System */
         .image-grid {
             display: flex;
             gap: 15px;
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
         .image-grid a {
             flex: 1;
         }
 
-        .fitted-img {
+        .blog-img, .fitted-img {
             width: 100%;
-            height: 250px; /* Adjust height as needed */
-            object-fit: cover; /* This makes it "fitted" */
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .fitted-img:hover {
-            transform: scale(1.02);
+        .blog-img:hover, .fitted-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
             cursor: zoom-in;
         }
 
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover { color: var(--accent); }
+
+        @media (max-width: 600px) {
+            .image-grid { flex-direction: column; }
+        }
     </style>
 </head>
-<body id="top"> <div class="container">
+<body id="top">
+
+    <nav class="top-nav">
+        <div class="nav-logo">AO<span>.</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="index.html#contact" class="special-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="blog-container container">
+        <span class="series-info">Blog Series: Part 2 of 3</span>
+        
         <header>
-            <h1>Grind, Pull, Repeat</h1>
-            <p class="author-meta">By: Aica Ortega</p>
+            <h1 style="font-size: 3.5rem; margin-bottom: 10px; background: linear-gradient(to right, #fff, var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase;">
+                Grind, Pull, Repeat
+            </h1>
+            <p style="opacity: 0.6; font-style: italic; margin-bottom: 30px;">By Aica Ortega • February 2026</p>
         </header>
 
-        <article>
-            <nav class="story-nav">
-                <a href="index.html">🏠 Home</a>
-                <span style="color: var(--text-muted);">|</span>
-                <a href="#ritual">The Ritual</a>
-                <a href="#rules">The Rules</a>
-                <a href="#escape">The Escape</a>
+        <article class="article-body">
+            <nav class="story-nav" style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
+                <a href="#ritual" style="color: var(--accent); text-decoration: none; margin: 0 10px; font-weight: bold;">The Ritual</a>
+                <a href="#rules" style="color: var(--accent); text-decoration: none; margin: 0 10px; font-weight: bold;">The Rules</a>
+                <a href="#escape" style="color: var(--accent); text-decoration: none; margin: 0 10px; font-weight: bold;">The Escape</a>
             </nav>
 
             <div class="image-grid">
                 <a href="https://image.api.playstation.com/vulcan/ap/rnd/202508/2602/30935168a0f21b6710dc2bd7bb37c23ed937fb9fa747d84c.png" target="_blank">
                     <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2602/30935168a0f21b6710dc2bd7bb37c23ed937fb9fa747d84c.png" 
-                        class="blog-img" alt="Gacha Game Visual 1" title="Click to view full image">
+                        class="blog-img" alt="Gacha Game Visual 1">
                 </a>
-                
                 <a href="https://webstatic.hoyoverse.com/upload/op-public/2023/09/14/3c862d085db721a5625b6e12649399bc_5096494079299377390.png" target="_blank">
                     <img src="https://webstatic.hoyoverse.com/upload/op-public/2023/09/14/3c862d085db721a5625b6e12649399bc_5096494079299377390.png" 
-                        class="blog-img" alt="Gacha Game Visual 2" title="Click to view full image">
+                        class="blog-img" alt="Gacha Game Visual 2">
                 </a>
             </div>
 
@@ -224,7 +149,6 @@
                     I call it my <strong>healthy gambling addiction.</strong> It sounds like a contradiction, 'di ba? 
                     But let me explain how this "addiction" actually keeps me sane.
                 </p>
-                <a href="#top" class="go-top">↑ Back to Top</a>
             </section>
 
             <section id="rules">
@@ -239,7 +163,6 @@
                     There’s a certain kind of discipline involved in saving up for months just to wait for that one character or item banner. 
                     It’s not about the money; it’s about the payoff of the grind.
                 </p>
-                <a href="#top" class="go-top">↑ Back to Top</a>
             </section>
 
             <section id="escape">
@@ -251,7 +174,7 @@
                 <p>
                     Kapag nag-o-open na ako ng loot boxes or nag-wi-wish sa gacha banners, nawawala yung stress ko about school or work. 
                     In those moments, hindi ko iniisip yung reports na kailangang ipasa o yung exams sa Monday. 
-                    My world shrinks down to just the screen, the music, and the hope of seeing that <span class="highlight">"Gold Glow."</span>
+                    My world shrinks down to just the screen, the music, and the hope of seeing that <span class="highlight" style="color: var(--accent); font-weight: bold;">"Gold Glow."</span>
                 </p>
 
                 <div class="image-grid">
@@ -268,7 +191,6 @@
                 <p>
                     Even if I don’t get what I want, the process of playing and strategizing how to get more resources is enough to give my brain a much-needed break from reality.
                 </p>
-                
                 <p>
                     Sa totoo lang, it’s not really about the virtual items. 
                     It’s about having a "switch" that I can turn on to signal my brain that work-time is over and play-time has begun. 
@@ -284,10 +206,36 @@
                     For me, as long as I’m not touching my saved allowance money and I’m still having fun, I’ll keep on rolling. 
                     It’s my way of winning back my peace of mind.
                 </p>
-                <a href="#top" class="go-top">↑ Back to Top</a>
             </section>
         </article>
+
+        <nav class="post-navigation">
+            <a href="part1.html" class="nav-btn">← Previous: C++ vs HTML</a>
+            <a href="index.html" class="nav-btn">Back to Hub</a>
+            <a href="part3.html" class="nav-btn" style="color: var(--accent);">Next: Part 3 →</a>
+        </nav>
     </div>
 
+    <a href="#top" class="back-to-top" id="backToTop">
+        <span>↑</span>
+        <small>TOP</small>
+    </a>
+
+    <footer style="margin-top: 100px; padding: 60px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p class="copyright" style="opacity: 0.3; font-size: 0.8rem;">&copy; 2026 Aica Ortega. Part 2 of the Developer Series.</p>
+    </footer>
+
+    <script>
+        const backToTop = document.getElementById("backToTop");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTop.style.opacity = "1";
+                backToTop.style.visibility = "visible";
+            } else {
+                backToTop.style.opacity = "0";
+                backToTop.style.visibility = "hidden";
+            }
+        };
+    </script>
 </body>
 </html>

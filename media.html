@@ -3,631 +3,413 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Hub | Aica Ortega</title>
+    <title>Media Hub | AO. Portfolio</title>
     <style>
         :root {
-            --page-bg: #16425b;
-            --card-bg: #3a7ca5;
-            --accent: #81c3d7;
-            --text: #ffffff;
-            --dark-overlay: rgba(0, 0, 0, 0.4);
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent: #38bdf8;
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--page-bg);
-            color: var(--text);
-            line-height: 1.6;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            line-height: 1.6;
         }
+
+        /* Nav Fix */
+        .global-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; color: #fff; }
+        .logo span { color: var(--accent); }
+        .nav-links a { margin-left: 25px; text-decoration: none; color: var(--text-dim); transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
         .container {
             max-width: 1200px;
-            margin: auto;
+            margin: 0 auto;
+            padding: 0 20px 100px; /* Space at bottom for back-to-top */
         }
 
-        header {
+        .hero-header {
             text-align: center;
-            margin-bottom: 40px;
+            padding: 80px 0 40px;
         }
 
-        .back-home {
+        .sub-title {
             color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            background: linear-gradient(to bottom right, #fff, var(--accent));
+            -webkit-background-clip: text; 
+            background-clip: text;         
+            -webkit-text-fill-color: transparent;
+            font-size: 3rem;
+            margin: 10px 0;
         }
 
         .media-nav {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
+            gap: 10px;
             position: sticky;
-            top: 10px;
-            z-index: 100;
+            top: 85px; /* Sits below global nav */
+            z-index: 1000;
+            margin-bottom: 50px;
+            padding: 10px 0;
         }
 
         .media-nav a {
-            background: var(--card-bg);
-            padding: 12px 20px;
-            border-radius: 25px;
-            color: white;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: var(--text-main);
             text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
+            font-size: 0.9rem;
+            border: 1px solid var(--glass-border);
+            transition: 0.3s ease;
         }
 
-        .media-nav a:hover { 
-            background: var(--accent); 
-            color: var(--page-bg); 
+        .media-nav a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
         }
 
         .section-title {
-            border-left: 6px solid var(--accent);
-            padding-left: 15px;
-            margin: 60px 0 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 1.8rem;
+            margin: 80px 0 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            scroll-margin-top: 150px; /* Prevents nav from covering title */
+        }
+
+        .section-title::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(to right, var(--glass-border), transparent);
         }
 
         .media-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
 
         .media-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
             overflow: hidden;
-            border: 1px solid rgba(129, 195, 215, 0.2);
-            transition: 0.3s ease;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
         }
 
         .media-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .video-container {
-            position: relative;
+        .visual-wrapper {
             width: 100%;
-            padding-top: 56.25%;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-        }
-
-        .card-content { 
-            padding: 20px; 
-        }
-       
-        .tag-group { 
-            margin-bottom: 10px; 
-        }
-
-        .tag {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--page-bg);
-            padding: 3px 10px;
-            border-radius: 5px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            margin-right: 5px;
-        }
-
-        h3 { 
-            margin: 10px 0; 
-            color: var(--accent); 
-            font-size: 1.4rem; 
-        }
-
-        .info { 
-            font-size: 0.9rem; 
-            margin-bottom: 15px; 
-        }
-
-        .info b { 
-            color: var(--accent); 
-        }
-
-        .synopsis {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 4; 
-            line-clamp: 4;        
+            aspect-ratio: 16 / 9; 
+            background: #000;
             overflow: hidden;
         }
 
-        .watch-btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
+        #tv .visual-wrapper { aspect-ratio: 2 / 3; } 
 
-        .watch-btn:hover { 
-            background: var(--accent); 
-            color: var(--page-bg); 
-        }
-
-        .go-top { 
-            display: block; 
-            text-align: right; 
-            margin-top: 20px; 
-            color: var(--accent); 
-            text-decoration: none; 
-        }
-
-        @media (max-width: 600px) { 
-            .media-grid { grid-template-columns: 1fr; } 
-        }
-
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .media-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(129, 195, 215, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .media-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .album-art-wrapper {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-            background-color: #000;
-        }
-
-        .album-art-wrapper img {
+        .visual-wrapper img, .visual-wrapper iframe {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
+            border: none;
         }
 
         .card-content {
-            padding: 15px;
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .tag {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--page-bg);
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        h3 {
-            margin: 5px 0;
-            font-size: 1.2rem;
-            color: #fff;
-        }
-
-        .info {
-            margin: 2px 0;
-            font-size: 0.9rem;
-            color: #cbd5e0;
-        }
-
-        .info b {
+            letter-spacing: 1px;
             color: var(--accent);
+            margin-bottom: 8px;
         }
 
-        .poster-wrapper {
-            width: 100%;
-            aspect-ratio: 2 / 3;
-            overflow: hidden;
-            background-color: #000;
-        }
+        h3 { margin: 0 0 10px 0; font-size: 1.25rem; }
 
-        .poster-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+        .info { font-size: 0.85rem; color: var(--text-dim); margin: 2px 0; }
 
         .synopsis {
             display: -webkit-box;
             -webkit-box-orient: vertical;
-            -webkit-line-clamp: 4;
-            line-clamp: 4;         
+            -webkit-line-clamp: 3;
+            line-clamp: 3;          
             overflow: hidden;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-top: 10px;
         }
 
         .watch-btn {
+            margin-top: auto;
             display: block;
             text-align: center;
-            margin-top: 15px;
-            padding: 8px;
-            border: 1px solid var(--accent);
+            padding: 12px;
+            background: rgba(56, 189, 248, 0.1);
             color: var(--accent);
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 0.85rem;
+            font-weight: 600;
             transition: 0.3s;
+            border: 1px solid transparent;
         }
 
-        .watch-btn:hover {
+        .watch-btn:hover { background: var(--accent); color: var(--bg-dark); }
+
+        /* CIRCULAR BACK TO TOP BUTTON */
+        .go-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--bg-dark);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            color: var(--accent);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 0.6rem;
+            font-weight: 800;
+            text-align: center;
+            line-height: 1.2;
+            z-index: 3000;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .go-top:hover {
             background: var(--accent);
-            color: var(--page-bg);
+            color: var(--bg-dark);
+            transform: translateY(-5px);
         }
 
-        #films .media-grid {
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        @media (max-width: 768px) {
+            .media-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+            .go-top { bottom: 20px; right: 20px; }
         }
     </style>
 </head>
-
 <body>
 
-
-
-<div class="container" id="top">
-
-    <a href="index.html" class="back-home">← Back to Home</a>
-
-   
-
-    <header>
-
-        <h1>My Media Library</h1>
-
-        <nav class="media-nav">
-
-            <a href="#beats">My Beats</a>
-
-            <a href="#films">Film Movies</a>
-
-            <a href="#tv">TV Shows</a>
-
-        </nav>
-
-    </header>
-
-
-
-    <section id="beats">
-
-        <h2 class="section-title">My Beats</h2>
-
-        <div class="media-grid">
-
-       
-
-            <div class="media-card">
-
-                <div class="album-art-wrapper">
-
-                    <img src="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/Arctic_Monkeys_-_AM.png?raw=true" alt="Arctic Monkeys AM" class="fitted-img">
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="tag">Genre: Indie Rock</span>
-
-                    <h3>No. 1 Party Anthem</h3>
-
-                    <p class="info"><b>Artist:</b> Arctic Monkeys</p>
-
-                    <p class="info"><b>Album:</b> AM</p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="media-card">
-
-                <div class="album-art-wrapper">
-
-                    <img src="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/TITFORTATtatemcrae.jpg?raw=true" alt="Tate McRae Tit for Tat" class="fitted-img">
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="tag">Genre: Pop</span>
-
-                    <h3>TIT FOR TAT</h3>
-
-                    <p class="info"><b>Artist:</b> Tate McRae</p>
-
-                    <p class="info"><b>Album:</b> TIT FOR TAT</p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="media-card">
-
-                <div class="album-art-wrapper">
-
-                    <img src="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/BEAUTYINDEATHchaseatlantic.jpg?raw=true" alt="Chase Atlantic Beauty in Death" class="fitted-img">
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="tag">Genre: Alt-Pop / R&B</span>
-
-                    <h3>Beauty in Death</h3>
-
-                    <p class="info"><b>Artist:</b> Chase Atlantic</p>
-
-                    <p class="info"><b>Album:</b> BEAUTY IN DEATH</p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="media-card">
-
-                <div class="album-art-wrapper">
-
-                    <img src="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/keshiBODIES.jpg?raw=true" alt="keshi Bodies" class="fitted-img">
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="tag">Genre: Lo-Fi / Alternative</span>
-
-                    <h3>Bodies</h3>
-
-                    <p class="info"><b>Artist:</b> keshi</p>
-
-                    <p class="info"><b>Album:</b> Requiem</p>
-
-                </div>
-
-            </div>
-
+    <nav class="global-nav">
+        <div class="logo">AO<span>.</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="media.html" class="active">Media Hub</a>
         </div>
+    </nav>
 
-        <a href="#top" class="go-top">↑ GO to TOP</a>
-
-    </section>
-
-
-
-    <section id="films">
-
-        <h2 class="section-title">Film Movies</h2>
-
-        <div class="media-grid">
-
-
-
-            <div class="media-card">
-
-                <div class="video-container">
-
-                    <iframe src="https://www.youtube.com/embed/KAXwdY3ei7c" title="Princess Kaguya" frameborder="0" allowfullscreen></iframe>
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="tag">Studio Ghibli</span> <span class="tag">Fantasy</span>
-
-                    <h3>Cosmic Princess Kaguya!</h3>
-
-                    <p class="info"><b>Director:</b> Isao Takahata</p>
-
-                    <p class="synopsis">Found inside a shining stalk of bamboo by an old bamboo cutter, a tiny girl grows rapidly into an exquisite young lady.</p>
-
-                </div>
-
+    <div class="container" id="top">
+        <header class="hero-header">
+            <div class="header-content">
+                <span class="sub-title">Curated Collection</span>
+                <h1>Media Hub</h1>
+                <p>A library of the music, cinema, and stories that inspire my work.</p>
             </div>
+            
+            <nav class="media-nav">
+                <a href="#beats">Music</a>
+                <a href="#films">Cinema</a>
+                <a href="#tv">Series</a>
+            </nav>
+        </header>
 
-
-
-            <div class="media-card">
-
-                <div class="video-container">
-
-                    <iframe src="https://www.youtube.com/embed/5xH0HfJHsaY" title="Parasite" frameborder="0" allowfullscreen></iframe>
-
+        <section id="beats">
+            <h2 class="section-title">My Beats</h2>
+            <div class="media-grid">
+                <div class="media-card">
+                    <div class="visual-wrapper">
+                        <img src="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/Arctic_Monkeys_-_AM.png?raw=true" alt="Arctic Monkeys">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Indie Rock</span>
+                        <h3>No. 1 Party Anthem</h3>
+                        <p class="info"><b>Artist:</b> Arctic Monkeys</p>
+                        <p class="info"><b>Album:</b> AM</p>
+                    </div>
                 </div>
-
-                <div class="card-content">
-
-                    <span class="tag">Thriller</span> <span class="tag">Drama</span>
-
-                    <h3>Parasite (2019)</h3>
-
-                    <p class="info"><b>Director:</b> Bong Joon Ho <br> <b>Starring:</b> Song Kang-ho, Lee Sun-kyun</p>
-
-                    <p class="synopsis">The Kim family sees an opportunity when their son starts working for the rich Park family. Soon, they live a parasitic life.</p>
-
+                <div class="media-card">
+                    <div class="visual-wrapper">
+                        <img src="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/TITFORTATtatemcrae.jpg?raw=true" alt="Tate McRae">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Pop</span>
+                        <h3>TIT FOR TAT</h3>
+                        <p class="info"><b>Artist:</b> Tate McRae</p>
+                        <p class="info"><b>Album:</b> Single</p>
+                    </div>
                 </div>
-
-            </div>
-
-
-
-            <div class="media-card">
-
-                <div class="video-container">
-
-                    <iframe
-
-                        src="https://www.youtube.com/embed/72av7VTBE_8?si=kMEwEjuLPktaUxNp&amp;controls=0"
-
-                        title="I Want to Eat Your Pancreas"
-
-                        frameborder="0"
-
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-
-                        referrerpolicy="strict-origin-when-cross-origin"
-
-                        allowfullscreen>
-
-                    </iframe>
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="tag">Drama / Anime</span>
-
-                    <h3>I Want to Eat Your Pancreas</h3>
-
-                    <p class="info"><b>Director:</b> Shin'ichirô Ushijima</p>
-
-                    <p class="synopsis">An aloof boy discovers a secret diary in a hospital, belonging to a popular classmate who is secretly suffering from a fatal pancreatic illness.</p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="media-card">
-
-                <div class="video-container">
-
-                    <iframe
-
-                        src="https://www.youtube.com/embed/nfK6UgLra7g?si=SXfALp0QmaKpjlxV&amp;controls=0"
-
-                        title="A Silent Voice"
-
-                        frameborder="0"
-
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-
-                        referrerpolicy="strict-origin-when-cross-origin"
-
-                        allowfullscreen>
-
-                    </iframe>
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="tag">Drama / Shonen</span>
-
-                    <h3>A Silent Voice</h3>
-
-                    <p class="info"><b>Director:</b> Naoko Yamada</p>
-
-                    <p class="synopsis">A student with a hearing impairment is bullied and transfers schools. Years later, her former bully, tormented by his past, sets out to make amends.</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <a href="#top" class="go-top">↑ GO to TOP</a>
-
-    </section>
-
-
-
-    <section id="tv">
-
-        <h2 class="section-title">TV Shows</h2>
-
-        <div class="media-grid">
-
-           
-
-            <div class="media-card">
-
-                <div class="poster-wrapper">
-
-                    <img src="https://static.wikia.nocookie.net/shipping/images/e/e9/Jujutsu_Kaisen_poster.jpg/revision/latest?cb=20210207182843" alt="Jujutsu Kaisen" class="fitted-img">
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="tag">Action / Supernatural</span>
-
-                    <h3>Jujutsu Kaisen</h3>
-
-                    <p class="info"><b>Started:</b> 2020 | <b>Seasons:</b> 2+</p>
-
-                    <p class="info"><b>Status:</b> Still Ongoing</p>
-
-                    <p class="synopsis">After swallowing a cursed talisman, Yuji Itadori enrolls into a shaman's school to eliminate the curse.</p>
-
-                    <a href="https://animeheaven.me/anime.php?62reo" class="watch-btn" target="_blank">Watch Now</a>
-
-                </div>
-
-            </div>
-
-            <div class="media-card">
-                <div class="poster-wrapper">
-                    <img src="https://static.wikia.nocookie.net/shingekinokyojin/images/d/d8/Attack_on_Titan_Season_1.jpg/revision/latest/scale-to-width-down/1200?cb=20211005182832" alt="Attack on Titan" class="fitted-img">
-                </div>
-
-                <div class="card-content">
-                    <span class="tag">Drama / Fantasy</span>
-                    <h3>Attack on Titan</h3>
-                    <p class="info"><b>Started:</b> 2013 | <b>Seasons:</b> 4</p>
-                    <p class="info"><b>Status:</b> Completed</p>
-                    <p class="synopsis">Humans find safety behind massive walls until a colossal Titan smashes through, leading Eren Jaeger to vow revenge.</p>
-                    <a href="https://animeheaven.me/anime.php?odsey" class="watch-btn" target="_blank">Watch Now</a>
+                <div class="media-card">
+                    <div class="visual-wrapper">
+                        <img src="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/BEAUTYINDEATHchaseatlantic.jpg?raw=true" alt="Chase Atlantic">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Alt-Pop</span>
+                        <h3>Beauty in Death</h3>
+                        <p class="info"><b>Artist:</b> Chase Atlantic</p>
+                        <p class="info"><b>Album:</b> BID</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="media-card">
-                <div class="poster-wrapper">
-                    <img src="https://a.storyblok.com/f/178900/1200x1696/48b8663276/spy-x-family-staffel-2-key-visual.jpeg/m/filters:quality(95)format(webp)" alt="Spy x Family" class="fitted-img">
+        <section id="films">
+            <h2 class="section-title">Film Movies</h2>
+            <div class="media-grid">
+                <div class="media-card">
+                    <div class="visual-wrapper">
+                        <iframe src="https://www.youtube.com/embed/KAXwdY3ei7c" title="Princess Kaguya"></iframe>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Studio Ghibli • Fantasy</span>
+                        <h3>The Tale of Princess Kaguya</h3>
+                        <p class="info"><b>Director:</b> Isao Takahata</p>
+                        <p class="synopsis">Found inside a shining stalk of bamboo, a tiny girl grows rapidly into an exquisite young lady who must face her celestial fate.</p>
+                        <a href="https://www.youtube.com/watch?v=KAXwdY3ei7c" class="watch-btn" target="_blank">Watch Trailer</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="tag">Comedy / Spy</span>
-                    <h3>Spy x Family</h3>
-                    <p class="info"><b>Started:</b> 2022 | <b>Seasons:</b> 2</p>
-                    <p class="info"><b>Status:</b> Ongoing</p>
-                    <p class="synopsis">Agent Twilight assembles a fake family to infiltrate an elite school, unaware his daughter is psychic and his wife is an assassin.</p>
-                    <a href="https://animeheaven.me/anime.php?yyfp6" class="watch-btn" target="_blank">Watch Now</a>
+
+                <div class="media-card">
+                    <div class="visual-wrapper">
+                        <iframe src="https://www.youtube.com/embed/5xH0HfJHsaY" title="Parasite"></iframe>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Thriller • Drama</span>
+                        <h3>Parasite</h3>
+                        <p class="info"><b>Director:</b> Bong Joon Ho</p>
+                        <p class="synopsis">Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.</p>
+                        <a href="https://www.youtube.com/watch?v=5xH0HfJHsaY" class="watch-btn" target="_blank">Watch Trailer</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="visual-wrapper">
+                        <iframe src="https://www.youtube.com/embed/72av7VTBE_8" title="I Want to Eat Your Pancreas"></iframe>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Drama • Anime</span>
+                        <h3>I Want to Eat Your Pancreas</h3>
+                        <p class="info"><b>Director:</b> Shin'ichirô Ushijima</p>
+                        <p class="synopsis">An aloof boy discovers a secret diary in a hospital, belonging to a popular classmate who is secretly suffering from a fatal illness.</p>
+                        <a href="https://www.youtube.com/watch?v=72av7VTBE_8" class="watch-btn" target="_blank">Watch Trailer</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="visual-wrapper">
+                        <iframe src="https://www.youtube.com/embed/nfK6UgLra7g" title="A Silent Voice"></iframe>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Drama • Shonen</span>
+                        <h3>A Silent Voice</h3>
+                        <p class="info"><b>Director:</b> Naoko Yamada</p>
+                        <p class="synopsis">A former bully, tormented by his past actions against a deaf classmate, sets out on a path of redemption to make amends.</p>
+                        <a href="https://www.youtube.com/watch?v=nfK6UgLra7g" class="watch-btn" target="_blank">Watch Trailer</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <a href="#top" class="go-top">↑ GO to TOP</a>
-    </section>
-</div>
+        </section>
+
+        <section id="tv">
+            <h2 class="section-title">TV Shows</h2>
+            <div class="media-grid">
+                <div class="media-card">
+                    <div class="visual-wrapper">
+                        <img src="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/jjk.jpg?raw=true" alt="Jujutsu Kaisen">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Action • Supernatural</span>
+                        <h3>Jujutsu Kaisen</h3>
+                        <p class="info"><b>Started:</b> 2020 | <b>Seasons:</b> 2+</p>
+                        <p class="info"><b>Status:</b> Ongoing</p>
+                        <p class="synopsis">After swallowing a cursed talisman, Yuji Itadori enrolls into a shaman's school to eliminate the curse.</p>
+                        <a href="https://animeheaven.me/anime.php?62reo" class="watch-btn" target="_blank">Watch Now</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="visual-wrapper">
+                        <img src="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/aot.jpg?raw=true" alt="Attack on Titan">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Drama • Fantasy</span>
+                        <h3>Attack on Titan</h3>
+                        <p class="info"><b>Started:</b> 2013 | <b>Seasons:</b> 4</p>
+                        <p class="info"><b>Status:</b> Completed</p>
+                        <p class="synopsis">Humans find safety behind massive walls until a colossal Titan smashes through, leading Eren Jaeger to vow revenge.</p>
+                        <a href="https://animeheaven.me/anime.php?odsey" class="watch-btn" target="_blank">Watch Now</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="visual-wrapper">
+                        <img src="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/spyxfamily.jpg?raw=true" alt="Spy x Family">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Comedy • Spy</span>
+                        <h3>Spy x Family</h3>
+                        <p class="info"><b>Started:</b> 2022 | <b>Seasons:</b> 2</p>
+                        <p class="info"><b>Status:</b> Ongoing</p>
+                        <p class="synopsis">Agent Twilight assembles a fake family to infiltrate an elite school, unaware his daughter is psychic and his wife is an assassin.</p>
+                        <a href="https://animeheaven.me/anime.php?yyfp6" class="watch-btn" target="_blank">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a href="#top" class="go-top">↑<br>BACK<br>TO TOP</a>
+    </div>
+
 </body>
 </html>
