@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missions | Bucket List</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --accent: #38bdf8;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--bg-dark);
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-main);
+        }
+
+        /* Nav Styling */
+        .global-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; position: fixed; width: 90%; top: 0; z-index: 1000;
+            backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo { font-weight: 800; font-size: 1.5rem; color: #fff; }
+        .logo span { color: var(--accent); }
+
+        .nav-links a { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            margin-left: 25px; 
+            font-size: 0.9rem; 
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: #fff; }
+
+        .bucket-hero {
+            height: 40vh;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.5), var(--bg-dark)),
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center; text-align: center;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .quest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: -60px;
+            padding-bottom: 100px;
+        }
+
+        .quest-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .quest-card {
+            position: relative; height: 350px; border-radius: 20px; overflow: hidden;
+            border: 1px solid var(--glass-border); transition: 0.4s ease;
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;
+        }
+
+        .card-img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover; background-position: center; z-index: 1;
+            transition: 0.6s ease;
+        }
+
+        .card-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 30%, transparent);
+            z-index: 2;
+        }
+
+        .card-content { position: relative; z-index: 3; }
+
+        .quest-card:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.4); }
+        .quest-card:hover .card-img { transform: scale(1.1); }
+
+        h2 { font-size: 1.4rem; margin: 0 0 10px 0; color: #fff; }
+        p { font-size: 0.85rem; color: var(--text-dim); margin: 0; line-height: 1.5; }
+
+        .tag { font-size: 0.7rem; font-weight: bold; text-transform: uppercase; color: var(--accent); letter-spacing: 1px; margin-bottom: 5px; display: block; }
+    </style>
+</head>
+<body>
+
+    <nav class="global-nav">
+        <a href="index.html" class="logo" style="text-decoration: none;">AO<span>.</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dream-places/index.html">Dream Places</a>
+        </div>
+    </nav>
+
+    <div class="bucket-hero">
+        <div class="hero-text">
+            <h1>The Decadent List</h1>
+            <p>10 Missions to Complete in One Lifetime</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="quest-grid">
+            
+            <a href="https://300mind.studio/blog/wp-content/uploads/2024/08/indie-game-development-guide-1.webp" target="_blank" class="quest-link">
+                <div class="quest-card">
+                    <div class="card-img" style="background-image: url('https://300mind.studio/blog/wp-content/uploads/2024/08/indie-game-development-guide-1.webp');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="tag">Achievement</span>
+                        <h2>The Masterpiece</h2>
+                        <p>Develop and successfully launch an indie game that builds a loyal player community.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/wifey.jpg?raw=true" target="_blank" class="quest-link">
+                <div class="quest-card">
+                    <div class="card-img" style="background-image: url('https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/wifey.jpg?raw=true');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="tag">Priority</span>
+                        <h2>A Shared Life</h2>
+                        <p>Building a home and experiencing a lovely, enduring journey with my partner.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800" target="_blank" class="quest-link">
+                <div class="quest-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="tag">Legacy</span>
+                        <h2>The Published Word</h2>
+                        <p>Write many books across genres, leaving behind a library of my imagination.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/airforce.jpg?raw=true" target="_blank" class="quest-link">
+                <div class="quest-card">
+                    <div class="card-img" style="background-image: url('https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/airforce.jpg?raw=true');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="tag">Adventure</span>
+                        <h2>Sky Voyager</h2>
+                        <p>Take flight in an airship and experience the world from a silent, floating perspective.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/phnavy.jpg?raw=true" target="_blank" class="quest-link">
+                <div class="quest-card">
+                    <div class="card-img" style="background-image: url('https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/phnavy.jpg?raw=true');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="tag">Duty</span>
+                        <h2>For the Nation</h2>
+                        <p>Devote a chapter of my life to serving my country with honor and impact.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800" target="_blank" class="quest-link">
+                <div class="quest-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="tag">Creative</span>
+                        <h2>The Solo Exhibit</h2>
+                        <p>Host an exhibition showcasing a collection of original artworks and physical creations.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://imgproxy.domestika.org/unsafe/w:1200/rs:fill/plain/src://blog-post-open-graph-covers/000/011/493/11493-original.jpg?1694446193" target="_blank" class="quest-link">
+                <div class="quest-card">
+                    <div class="card-img" style="background-image: url('https://imgproxy.domestika.org/unsafe/w:1200/rs:fill/plain/src://blog-post-open-graph-covers/000/011/493/11493-original.jpg?1694446193');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="tag">Skill</span>
+                        <h2>Digital Architect</h2>
+                        <p>Master Unreal Engine or Unity to the level of a senior technical artist.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/adoconcert.jpg?raw=true" target="_blank" class="quest-link">
+                <div class="quest-card">
+                    <div class="card-img" style="background-image: url('https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/adoconcert.jpg?raw=true');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="tag">Impact</span>
+                        <h2>Utage: The Great Feast</h2>
+                        <p>Experiencing the legendary vocal "rasp" of Ado live. A mesmerizing blend of J-Pop intensity and theatrical mystery.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.worldatlas.com/r/w1300/upload/9e/9d/8a/chamonix-mont-blanc-resort-alps-france-iren-key.jpg" target="_blank" class="quest-link">
+                <div class="quest-card">
+                    <div class="card-img" style="background-image: url('https://www.worldatlas.com/r/w1300/upload/9e/9d/8a/chamonix-mont-blanc-resort-alps-france-iren-key.jpg');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="tag">Experience</span>
+                        <h2>The High Peaks</h2>
+                        <p>Trek through the Alps or Himalayas to witness the raw majesty of high-altitude nature.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/germancountrysidehouse.jpg?raw=true" target="_blank" class="quest-link">
+                <div class="quest-card">
+                    <div class="card-img" style="background-image: url('https://github.com/ortegaaica-han/imageAddresses.github.io/blob/main/germancountrysidehouse.jpg?raw=true');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="tag">Foundation</span>
+                        <h2>Heritage Keeper</h2>
+                        <p>Design and build a permanent home that serves as a sanctuary for my future family.</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: var(--text-dim);">
+        &copy; 2026 Aica Ortega. Built with logic & creativity.
+    </footer>
+
+</body>
+</html>
